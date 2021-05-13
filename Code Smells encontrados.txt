@@ -1,0 +1,12 @@
+1) Duplicated Code: en #Cuenta tenes la f0uncion agregateA(...), mientras que en #Movimiento tenes la funcion agregarMovimiento(...)
+2) Duplicated Code: en #Cuenta, en sacar() y poner(), se consulta si el monto es <= 0. Eso se puede hacer con un metodo. (Y la logica de preguntar si es menor a 0 y proceder se repite)
+3) Primitive obsession: la variable "cuanto" es double. Se puede usar BigDecimal
+4) Message Chains: en #Cuenta, tanto en sacar() como poner() como getMontoExtraido(), se envian muchos mensajes. Se puede delegar en multiples metodos que cada uno haga algo puntual y entienda bien su objetivo. 
+5) (NO SE SI ES CODE SMELL) Se puede ser mucho mas expresivo en todo el codigo
+6) Shotgun surgery: en #Cuenta, el limite podria ser un atributo por si se cambia el valor de ese 1000?
+7) Long method: en #Cuenta, en la linea 34, la condicion del if es muy larga y es un metodo muy largo y confuso. Se puede delegar
+8) Feature envy: en #Cuenta, en la funcion getMontoExtraidoA(...), no deberia ser el movimiento el que se encarga de averiguar la info del monto extraido?
+9) Duplicated Code: se inicializa a saldo dos veces
+10) Misplaced Method: en #Movimiento, es la cuenta la que se encarga de calcular el valor, no el movimiento.
+
+NOTA: me parece que hay algo feo en agregateA(...), el problema es que no puedo identificar que tipo de code smell es
